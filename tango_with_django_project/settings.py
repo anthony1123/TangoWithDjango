@@ -5,7 +5,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 
-
 TEMPLATE_DIR = os.path.join( BASE_DIR, 'templates' )
 STATIC_DIR = os.path.join( BASE_DIR, 'static' )
 STATICFILES_DIRS = [STATIC_DIR, ]
@@ -65,7 +64,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
-
 
 
 

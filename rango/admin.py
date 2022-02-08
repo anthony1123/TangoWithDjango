@@ -1,6 +1,6 @@
 from django.contrib import admin
-# c5
-from django.contrib import admin
+
+# chapter 5
 from rango.models import Category, Page
 
 
@@ -8,5 +8,13 @@ class PageAdmin(admin.ModelAdmin):
     list_display = ('title', 'category', 'url')
 
 
-admin.site.register(Category)
 admin.site.register(Page, PageAdmin)
+
+
+# chapter 6
+# Add in this class to customise the Admin Interface
+class CategoryAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('name',)}
+
+
+admin.site.register(Category, CategoryAdmin)
