@@ -23,7 +23,6 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -64,8 +63,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
-
-
 
 DATABASES = {
     'default': {
