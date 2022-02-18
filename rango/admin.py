@@ -1,6 +1,5 @@
 from django.contrib import admin
 
-
 from rango.models import Category, Page
 
 
@@ -9,6 +8,7 @@ class PageAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Page, PageAdmin)
+
 
 
 class CategoryAdmin(admin.ModelAdmin):

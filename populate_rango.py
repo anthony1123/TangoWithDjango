@@ -1,4 +1,4 @@
-# chapter 5
+
 import os
 from random import random
 
@@ -34,7 +34,7 @@ def populate():
         for p in cat_data['pages']:
             add_page(c, p['title'], p['url'])
 
-    # Print out the categories we have added.
+
     for c in Category.objects.all():
         for p in Page.objects.filter(category=c):
             print(f'- {c}: {p}')
@@ -54,7 +54,7 @@ def add_cat(name, views, likes):
     return c
 
 
-# Start execution here!
+
 if __name__ == '__main__':
     print('Starting Rango population script...')
     populate()

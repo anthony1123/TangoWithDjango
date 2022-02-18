@@ -4,6 +4,7 @@ from django.urls import path
 from django.urls import include
 from rango import views
 
+#c4
 from django.conf import settings
 from django.conf.urls.static import static
 
