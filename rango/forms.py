@@ -7,7 +7,6 @@ class CategoryForm(forms.ModelForm):
     likes = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
     slug = forms.CharField(widget=forms.HiddenInput(), required=False)
 
-
     class Meta:
 
         model = Category
@@ -22,6 +21,5 @@ class PageForm(forms.ModelForm):
     class Meta:
 
         model = Page
-
 
         exclude = ('category',)

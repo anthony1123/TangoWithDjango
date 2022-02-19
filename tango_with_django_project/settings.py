@@ -1,10 +1,11 @@
 
 import os
-
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 
+#chapter4
 TEMPLATE_DIR = os.path.join( BASE_DIR, 'templates' )
 STATIC_DIR = os.path.join( BASE_DIR, 'static' )
 STATICFILES_DIRS = [STATIC_DIR, ]
@@ -23,6 +24,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -66,6 +68,8 @@ TEMPLATES = [
 WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
 
 
+# Database
+# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
     'default': {

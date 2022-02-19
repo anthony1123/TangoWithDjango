@@ -1,7 +1,9 @@
 import rango
 from django.http import HttpResponse
 from django.shortcuts import render
+
 from rango.models import Page, Category
+
 from rango.forms import CategoryForm, PageForm
 from django.shortcuts import redirect
 from django.urls import reverse
@@ -19,17 +21,17 @@ def index(request):
 
 
 def about(request):
-    
+
     context_dict = {'myname': '2584092j, xiaowei jia'}
     return render(request, 'rango/about.html', context=context_dict)
 
 
 def category(request, category_name_slug):
-    
+   
     context_dict = {}
 
     try:
-        
+     
         category = Category.objects.get(slug=category_name_slug)
         context_dict['category_name'] = category.name
 
@@ -38,14 +40,14 @@ def category(request, category_name_slug):
 
 
         context_dict['pages'] = pages
+
         context_dict['category'] = category
     except Category.DoesNotExist:
-        
+       
         pass
 
 
     return render(request, 'rango/category.html', context_dict)
-
 
 
 def show_category(request, category_name_slug):
@@ -58,6 +60,7 @@ def show_category(request, category_name_slug):
         pages = Page.objects.filter(category=category)
 
         context_dict['pages'] = pages
+
         context_dict['category'] = category
     except Category.DoesNotExist:
 
@@ -77,6 +80,7 @@ def add_category(request):
         if form.is_valid():
 
             form.save(commit=True)
+
 
             return redirect('/rango/')
         else:
