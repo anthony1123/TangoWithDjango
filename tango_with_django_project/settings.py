@@ -1,30 +1,24 @@
-
 import os
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-
-#chapter4
-TEMPLATE_DIR = os.path.join( BASE_DIR, 'templates' )
-STATIC_DIR = os.path.join( BASE_DIR, 'static' )
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [STATIC_DIR, ]
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
+
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
-
+LOGIN_URL = '/rango/login/'
 
 
 SECRET_KEY = 'bwt+j*jufkl2#tp$ttcojvj!@f=pojt_z2jr7=ajd7l%c8v))1'
-
 
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -68,16 +62,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -94,6 +84,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+password_hashers = [
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.BCryptPasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.hashers.PBKDF2SHA1PasswordHasher',
+]
 
 LANGUAGE_CODE = 'en-us'
 
@@ -104,7 +100,5 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-
 
 STATIC_URL = '/static/'
